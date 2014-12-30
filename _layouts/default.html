@@ -1,0 +1,25 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+{% include head.html %}
+<body>
+  {% include navbar.html %}
+  <hr style="margin: 0px;"/>
+
+  <div class="row" data-equalizer>
+    <div class="large-3 columns" data-equalizer-watch>
+      {% include aside.html %}
+    </div>
+
+    <div class="large-9 columns" role="content" data-equalizer-watch>
+      {{ content }}
+    </div>
+  </div>
+ 
+  {% include footer.html %}
+
+  <script src="{{ site.baseurl }}/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/bower_components/foundation/js/foundation.min.js"></script>
+  <script src="{{ site.baseurl }}/javascripts/app.js"></script>
+</body>
+</html>

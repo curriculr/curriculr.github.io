@@ -1,0 +1,109 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+@import "syntax-highlighting";
+
+.top-bar {
+   background: none;
+   margin-bottom: 10px
+}
+
+.top-bar-section li a:not(.button) {
+	color: $black;
+  background: $white !important;   
+}
+
+.top-bar-section li a:not(.button):hover {
+	color: $base;
+  background: #7a687b !important;   
+}
+
+// .top-bar-section ul li.active > a {
+//     background: gray !important;   
+// }
+
+// .top-bar-section ul li.active > a:hover {
+//     background: yellow !important;   
+// }
+
+.jumbotron {
+	color: $white;
+	background: url("../images/jumbotron.jpg") no-repeat;
+	padding: 15px 0 0; 
+	box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6); 
+	z-index: 999;
+  background-size: cover;
+  // border-bottom: 2px solid #428bca;
+  padding: 80px 0;
+
+  h1, h2 {
+  	color: $white;
+  }
+
+  &.secondary{
+    padding: 50px 0;
+  }
+}
+
+.centered-list {
+	display: table;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+	color: #7a687b;
+}
+
+.navbar {
+  border-bottom: 1px solid $base;
+}
+
+aside {
+	// border-right: 1px solid $base;
+  // padding: 10px 10px 0px 0px;
+  .side-nav {
+    padding: 0px;
+  }
+}
+
+footer {
+  border-top: 1px solid $base;
+  padding-top: 10px;
+}

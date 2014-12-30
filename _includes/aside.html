@@ -1,0 +1,11 @@
+<aside data-equalizer-watch>
+	{% if page.side_menu %}
+	<ul class="side-nav">
+		{% for menu in page.side_menu %}
+  		<li {% if menu['active'] %} class="active" {% endif %}>
+  			<a href="{{ site.baseurl }}/{{ menu['url'] }}" class="aside-link">{{ menu['title'] }}</a>
+  		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+</aside>

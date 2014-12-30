@@ -1,0 +1,7 @@
+{
+  "name": "curriculr.org pages",
+  "dependencies": {
+    "angular": "angular/bower-angular",
+    "foundation": "zurb/bower-foundation"
+  }
+}
