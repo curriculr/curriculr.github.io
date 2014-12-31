@@ -65,7 +65,7 @@
 
 .jumbotron {
 	color: $white;
-	background: url("../images/jumbotron.jpg") no-repeat;
+	background: #5D2788; //url("../images/jumbotron.jpg") no-repeat;
 	padding: 15px 0 0; 
 	box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6); 
 	z-index: 999;
@@ -73,8 +73,8 @@
   // border-bottom: 2px solid #428bca;
   padding: 80px 0;
 
-  h1, h2 {
-  	color: $white;
+  h1, h2, h3 {
+  	color: #dadada;
   }
 
   &.secondary{
