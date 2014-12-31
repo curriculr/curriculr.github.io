@@ -40,20 +40,19 @@
 //   "foundation/components/visibility";
 @import "syntax-highlighting";
 
-.top-bar {
-   background: none;
-   margin-bottom: 10px
-}
+//.top-bar {
+//   margin-bottom: 10px
+//}
 
-.top-bar-section li a:not(.button) {
-	color: $black;
-  background: $white !important;   
-}
+//.top-bar-section li a:not(.button) {
+//	color: $black;
+//  background: $white !important;   
+//}
 
-.top-bar-section li a:not(.button):hover {
-	color: $base;
-  background: #7a687b !important;   
-}
+//.top-bar-section li a:not(.button):hover {
+//	color: $base;
+//  background: #7a687b !important;   
+//}
 
 // .top-bar-section ul li.active > a {
 //     background: gray !important;   
@@ -91,9 +90,9 @@ h1, h2, h3 {
 	color: #7a687b;
 }
 
-.navbar {
-  border-bottom: 1px solid $base;
-}
+//.navbar {
+//  border-bottom: 1px solid $base;
+//}
 
 aside {
 	// border-right: 1px solid $base;

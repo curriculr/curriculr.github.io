@@ -1,24 +1,25 @@
 ---
 layout: docs
 title: Installation
-side_menu:
-  - title: Getting started
+side_menu_docs:
+  - title: Home
     url: docs/index.html
   - title: Installation
     url: docs/installation.html
     active: true
   - title: Configuration
     url: docs/configuration.html
-  - title: Contribution
-    url: docs/contribution.html
+side_menu_tutorials:
+  - title: Administrator Guide
+    url: docs/administrator.html
+  - title: Instructor Guide
+    url: docs/instructor.html
+  - title: Student Guide
+    url: docs/student.html
 ---
 
-<div data-alert class="alert-box warning radius">
-  <i class="fa fa-exclamation-triangle"></i> Work in progress
-  <a href="#" class="close">&times;</a>
-</div>
-
-Before Duroosi can be deployed, the following must be done:
+## Pre-requisites
+Before Curriculr can be deployed, the following must be done:
 
 - Either PostgreSQL or MySQL server is installed and is ready to accept connections. Change the `Gemfile` to include the gem of the database you installed and comment out the one you did not.
 
@@ -34,25 +35,127 @@ gem 'pg'
 {% endhighlight %}
 
 - Redis server is installed and ready to accept connections.
-- The application *secrets* has been specified. 
 
 ## Specifying Application Secrets
-To deploy Duroosi, certain pieces of information (we call secrets) have to be provided. These secrets include, for instance, Rails' `secret_key_base`  or the name, email, and password of the first user (User with `id=1`) which is a special *root-like* or *super* user with ability to do anything and everything. These secrets defer from one environment to another and from one application instance to another and are stored in a file called `config/secrets.yml`.
-
-As the name implies, the information contained in this file are supposed to be private that should not be shared at all. It's also highly advisable that it should not be included in any source control (Git, Mercurial, or Subversion) repository. Refer to [Secrets](/duroosi/docs/secrets.html) for more information on the secrets file and its contents.
-
-Duroosi comes with an example secrets file [config/secrets_exemple.yml](https://github.com/aalgahmi/duroosi/blob/master/config/secrets_example.yml) filled with dummy settings. To generate a secrets file based on the example file run the following:
+Before you can deploy Curriculr, certain pieces of information (we call secrets) have to be provided. These secrets defer from one environment to another and from one application instance to another and are stored in a file called `config/secrets.yml`. To help with the creation of this file, Curriculr comes with a `rake` task
 
 {% highlight sh %}
-rake duroosi:secrets:generate
+rake curriculr:secrets:generate
 {% endhighlight %}
 
-This will create the `secrets.yml` under the `config/` folder, if it does not exit already. Open this file and make the necessary changes.
+This will create the `secrets.yml` under the `config/` folder, if it does not exit already. Open this file and make the necessary changes. 
 
+Below is a description of what theses secrets mean.
+
+### Super user
+{% highlight yaml %}
+site:
+  su_name: Super User
+  su_email: admin@example.com
+  su_password: a_secret
+{% endhighlight %}
+
+These settings identify the name, email, and password of the super user of the application. This user is a special *root-like* user with an `id = 1' and has full control over everything in the application.
+
+### Database settings
+{% highlight yaml %}
+database:
+  adapter: postgresql # mysql or postgresql
+  name: curriculr
+  username: DB_USERNAME
+  password: a_secret
+  socket: /tmp/mysql.sock
+{% endhighlight %}
+
+This is where the database is configured. To start, specify the `adapter` which tells whether the database being used is PostgreSQL or MySQL. Both are supported by Curriculr. Following that, you set the name of the database schema, db username and password needed to connect to the database server, and the socket needed for such a connection (in the case of MySQL database server).
+
+### File uploads
+{% highlight yaml %}
+storage:
+  type: file
+  asset_host: 'http://localhost:3000'
+{% endhighlight %}
+
+This is how and where we specify how updated course materials are stored. The `type` setting can take one two values: `file` or `fog`. `file` type indicates that uploaded files are stored in the same machine running the application. `fog` type allows Curriculr to upload files into other cloud-based file services such as [Amazon S3](http://aws.amazon.com/s3/), [Rackspace Cloud Files](http://www.rackspace.com/cloud/files/) or [Google Storage](https://cloud.google.com/storage/).
+
+If type is `fog`, the following settings will have to be provided as well.
+
+{% highlight yaml %}
+fog:
+  directory: AWS_DIRECTORY
+  public: true
+  AWS:
+    aws_access_key_id: xxx                 # required
+    aws_secret_access_key: yyy             # required
+    region: eu-west-1                      # optional
+    host: s3.example.com                   # optional
+    endpoint: https://s3.example.com:8080  # optional
+{% endhighlight %}
+
+for Amazon S3,
+
+{% highlight yaml %}
+fog:
+  directory: RACKSPACE_DIRECTORY
+  public: true
+  Rackspace:
+    rackspace_username: xxx
+    rackspace_api_key: yyy
+    rackspace_region: ord                # optional, defaults to dfw
+{% endhighlight %}
+
+for Rackspace Cloud Files, and
+
+{% highlight yaml %}
+fog:
+  directory: GOOGLE_DIRECTORY
+  public: true
+  Google:
+    google_storage_access_key_id: xxx
+    google_storage_secret_access_key: yyy
+{% endhighlight %}
+
+for Google Storage.
+
+### Facebook and Google authentication
+
+{% highlight yaml %}
+auth: 
+  facebook:
+    id: AUTH_FACEBOOK_ID
+    secret: AUTH_FACEBOOK_SECRET
+  google_oauth2:
+    id: AUTH_GOOGLE_ID
+    secret: AUTH_GOOGLE_SECRET
+{% endhighlight %}
+
+Using the above settings, Curriculr allows users to bypass the registration step and sign in using their existing `facebook` and `google` accounts. 
+
+### Application secret key
+{% highlight yaml %}
+secret_key_base: e0fa05385ec9e9a58b818ec08e...
+{% endhighlight %}
+
+This is required by Rails and typically used to generate a secret for cookie sessions. It can be generated by running:
+
+{% highlight sh %}
+rake secret
+{% endhighlight %}
+
+These keys differ from one enrnironment to another.
+
+### Mailer settings
+{% highlight yaml %}
+mailer:
+  host: MAILER_HOST
+  port: 587
+  domain: MAILER_DOMAIN
+  username: MAILER_USERNAME
+  password: MAILER_PASSWORD
+{% endhighlight %}
 
 ## Deploying the Application
-
-Now that the application secrets are provided, you can follow the steps below to deploy Duroosi into a `development` environment.
+Now that the application secrets are provided, you can follow the steps below to deploy Curriculr into a `development` environment.
 
 1: Run bundler
 
@@ -63,7 +166,7 @@ bundle install
 2: Create the database and run migrations
 
 {% highlight sh %}
-rake duroosi:db:migrate
+rake curriculr:db:migrate
 {% endhighlight %}
 
 3: Load the seed data
@@ -77,24 +180,17 @@ This will create the default account(tenant) and the first user based on the inf
 4: Reset Redis configurations and translations
 
 {% highlight sh %}
-rake duroosi:redis:reset
+rake curriculr:redis:reset
 {% endhighlight %}
 
 **Please note that** steps 2, 3, and 4 can be combined together by running
 
 {% highlight sh %}
-rake duroosi:bootstrap
+rake curriculr:bootstrap
 {% endhighlight %}
 
 5: Finally, run Rails server to start the application in development
 
 {% highlight sh %}
 rails server
-{% endhighlight %}
-
-## Running the Tests
-To run the tests, you need to run
-
-{% highlight sh %}
-rake spec
 {% endhighlight %}

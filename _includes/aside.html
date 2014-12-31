@@ -1,11 +1,21 @@
+
 <aside data-equalizer-watch>
-	{% if page.side_menu %}
-	<ul class="side-nav">
-		{% for menu in page.side_menu %}
-  		<li {% if menu['active'] %} class="active" {% endif %}>
-  			<a href="{{ site.baseurl }}/{{ menu['url'] }}" class="aside-link">{{ menu['title'] }}</a>
-  		</li>
-		{% endfor %}
-	</ul>
-	{% endif %}
+  <ul class="side-nav">
+    <li class="heading">Getting started</li>
+  	{% if page.side_menu_docs %}
+  		{% for menu in page.side_menu_docs %}
+    		<li {% if menu['active'] %} class="active" {% endif %}>
+    			<a href="{{ site.baseurl }}/{{ menu['url'] }}" class="aside-link">{{ menu['title'] }}</a>
+    		</li>
+  		{% endfor %}
+  	{% endif %}
+    <li class="heading">Tutorials</li>
+    {% if page.side_menu_tutorials %}
+      {% for menu in page.side_menu_tutorials %}
+        <li {% if menu['active'] %} class="active" {% endif %}>
+          <a href="{{ site.baseurl }}/{{ menu['url'] }}" class="aside-link">{{ menu['title'] }}</a>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
 </aside>

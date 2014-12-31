@@ -1,29 +1,33 @@
 ---
 layout: docs
 title: Configuration
-side_menu:
-  - title: Getting started
+side_menu_docs:
+  - title: Home
     url: docs/index.html
   - title: Installation
     url: docs/installation.html
   - title: Configuration
     url: docs/configuration.html
     active: true
-  - title: Contribution
-    url: docs/contribution.html
+side_menu_tutorials:
+  - title: Administrator Guide
+    url: docs/administrator.html
+  - title: Instructor Guide
+    url: docs/instructor.html
+  - title: Student Guide
+    url: docs/student.html
 ---
 
-<div data-alert class="alert-box warning radius">
-  <i class="fa fa-exclamation-triangle"></i> Work in progress
-  <a href="#" class="close">&times;</a>
-</div>
+Beside application secrets, there are three kinds of configurations that can be used to change the behavior of Curriculr. These configurations are stored in Redis and can be changed through the application itself given the proper authorization. They are from the top down:
 
-Beside secrets, there are three other kinds of configurations that can be used to change the behavior of Duroosi. These configurations are stored in Redis and can be changed by an admin user once the application is up and running. These kinds form a hierarchy such that certain configuration like `locale` defined in a lower level overrides the same configuration defined at a higher level. From the top down, these configurations are site settings, account settings, and course settings.
+- **Site settings**: Managed by the site's super user, these configurations apply across accounts to the whole Curriculr site. An example of these configurations is the `supported_locales` which lists all the locales recognized and supported by Curriculr. 
+
+- **Account settings**: Managed by the account administrator, these configurations apply only to a certain account (or tenant). An example of these configurations is the `theme` configuration which apply a specific theme to only the account being configured.
+
+- **Course settings**: Managed by the course instructor, these configurations apply to the course being configured and include configurations such as `grade_distribution`.
 
 ## Site settings 
-
-These are configurations that apply to the whole Duroosi site. An example of these configurations is the `supported_locales` which lists all the locales recognized and supported by the site. These settings are:
-
+### Supported locales
 {% highlight yaml %}
 site:
   supported_locales:
@@ -31,7 +35,15 @@ site:
     en: English
 {% endhighlight %}
 
-Lists all the locales supported by the site. Any new locale must be added to this list.
+Lists all the locales supported by the site. Any new locale must be added to this list to be recognized.
+
+### Available themes
+{% highlight yaml %}
+available_themes:
+  bootstrap:
+    parent:
+    about: The default theme; based on Bootstrap 3.
+{% endhighlight %}
 
 {% highlight yaml %}
   default_account: main
