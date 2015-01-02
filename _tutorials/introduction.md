@@ -12,8 +12,8 @@ side_menu_tutorials:
   - title: Introduction
     url: tutorials/introduction.html
     active: true
-  - title: For administrators
-    url: tutorials/administrator.html
+  #- title: For administrators
+  #  url: tutorials/administrator.html
   - title: For instructors
     url: tutorials/instructor.html
   - title: For students
@@ -25,21 +25,28 @@ side_menu_tutorials:
   <a href="#" class="close">&times;</a>
 </div>
 
-At its core, Curriculr is an online learning management system. It can be used with MOOCs (Massive Online Open Courses) as well as with courses with limited-audience. Whether the course if for Arts or Mathematics, Literature or Techonologe, Instruction or training Curriculr provides a simple and powerfull platform for all.
+Curriculr is an open and interactive learning platform that supports both MOOCs (Massive Online Open Courses) and courses with limited-audiences. Whether your course is public or private, for arts or mathematics, literature or technology, instruction or training, Curriculr provides a simple and powerful platform for all.
 
-Curriculr users or of three kinds: administrators, faculty, and students. Administrators oversee the site and have access to everthing in it. Faculty users create and build courses. Students see available classes and can enroll on any class they choose. Once enrolled in a class, they'll be able to attend lectures, attempt assessments, read documents, watch videos, and participate in class discussions. 
+## Administrators, faculty and students
+Curriculr supports three kinds of users: administrators, faculty, and students. Administrators oversee the site and have access to everything in it. Faculty users create and manage courses. Students browse available classes and can enroll in any class they choose. Once enrolled in a class, they'll be able to attend lectures, attempt assessments, take surveys, read documents, watch videos, participate in class discussions, and track their progress.y
 
-It's imperative to understand how Curriculr separates courses and classes. As indicated in the figure below, courses are created and managed be instructors. They encompass everything form the syllabus to the videos to the questions and assessments. The represent the learning content and how it's organized. Students don't see courses directly at all.
+An administrator is any user with the role of `admin`. Similarly a faculty user is any user with the role of `faculty`. These two roles are assigned manually to users by an existing adminstrator. A student, on the other hand, is any non-administrator user with at least one enrolled class.
+
+## Course vs class
+You might have noticed that we use the term `course(s)` when we talk about instructors and the term `class(es)` when we talk about students. This is because in Curriculr courses and classes are different things, and it's imperative to understand
+the difference between these two terms.
 
 ![Course vs class]({{ site.baseurl }}/images/tutorial-intro-fig01.png)
 
-Courses are made avialable to students through classes. These classes carry the courses names and are open to students for a given period of time. In a sense, classes are windows through which students can briefly peek into courses and consume/interact with its materials. 
+As indicated in the figure above, courses are created and managed be instructors. They encompass both content (syllabus, units, lectures, questions, assessments, surveys, pages) and organization (how units are laid out, what lectures are under what units, and so on).
 
-In Curriculr, to publish a course is to create a class with begin and end dates. Once the class is approved, it shows up under the main `Classes` menu and intersted students can enroll in it. In a way class is like a session of the course. All students interations such as assessments attempts, lecture attendance, and discussion participation are tied to the class and not directly to course.
+Students do not interact with courses directly. Instead, they are made available to students through classes. These classes carry the courses names and inherit their contents and organizations. They, however, have begin and ends dates making them more like time windows through which students can briefly peek into courses and consume/interact with their contents. In other words, a class is like a session of the course. All student interactions and activities such as assessment attempts, lecture attendance, and discussion participation are all tied to the class and not directly to the course.
 
-Curriculr takes this approach as oppopsed to publish the course directly for two main reasons:
-- To allow course contents and materials to be re-used (without copying) in multiple classes. 
-- To allow flexiblity int he since that a course can have multiple classes open at different times or at the same time to the same or different audiences.
-- A class in this sense, represent an interval in the life of a course which can continue to be developed and fine tuned with each class. It represents a version or snapshot of the course at one point of time.
+In addition, to publish a course is to create a class with a begin and an end dates. Once this class is approved, it shows up under the top main `Classes` menu, and interested students will be able to enroll in it. 
 
-The importance of the distinction between courses and classes is paramound in Curriculr and evident in how Curriculr is desinged and implemented and how its components are presents the different kinds of users.
+In Curriculr, such separation between courses and classes serves two main purposes:
+
+- It allows great flexibility in that a course can have multiple separate classes open at different times or at the same time to the same or different audiences.
+- It separates the static from the dynamic; course content and organization are more static in nature while class activities, discussions, are updates are more dynamic and timely. Separating between these two allows for reusing the course content (without copying) over and over again by means of classes.
+
+Finally as you'll notice later on, any instructor's guide or tutorial will be concerned with courses while any student's guide or tutorial is concerned with classes.

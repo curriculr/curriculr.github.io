@@ -2,10 +2,18 @@
 layout: blog
 ---
 
-Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.
+Curriculr is an open and interactive learning platform that supports both MOOCs (Massive Online Open Courses) and courses with limited-audiences. Whether your course is public or private, for arts or mathematics, literature or technology, instruction or training, Curriculr provides a simple and powerful platform for all.
 
-Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+It was desinged to be:
 
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- **Full-fledged**: Instructors can create courses and organize their contents into units and lectures with videos, audios, images, and documents. Students can enroll in classes, participate in discussions, attend lectures, attempt quizzes and exams, and track their progress.
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+- **Internationalized**: It comes out of the box with support for two locales `en` (English) and `ar` (Arabic); and other locales can easily be added.
+
+- **Multi-tenant**: Tenants, which are called accounts (not to be confused with user accounts) are identified by subdomains and are completely separate from one another. Each account (tenant) acts as if it is a separate site with its own configuration, courses, users and theme.
+
+- **Themeable**: It supports themes and theme inheritance. Adding a new theme can be as easy as providing a name and changing a few CSS style classes.
+
+- **Extensible**: It was designed to be extensible by means of other gems, plugins or mountable engines; just like any other Rails application.
+
+More information can be found at [this page]({{ site.baseurl }}/docs/index.html).

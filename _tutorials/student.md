@@ -11,8 +11,8 @@ side_menu_docs:
 side_menu_tutorials:
   - title: Introduction
     url: tutorials/introduction.html
-  - title: For administrators
-    url: tutorials/administrator.html
+  #- title: For administrators
+  #  url: tutorials/administrator.html
   - title: For instructors
     url: tutorials/instructor.html
   - title: For students
@@ -21,6 +21,6 @@ side_menu_tutorials:
 ---
 
 <div data-alert class="alert-box alert radius">
-  Still under construction
+  Coming soon
   <a href="#" class="close">&times;</a>
 </div>

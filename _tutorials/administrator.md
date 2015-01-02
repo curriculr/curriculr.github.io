@@ -21,6 +21,6 @@ side_menu_tutorials:
 ---
 
 <div data-alert class="alert-box alert radius">
-  Still under construction
+  Coming soon
   <a href="#" class="close">&times;</a>
 </div>
