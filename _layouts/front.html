@@ -1,22 +1,12 @@
-<!doctype html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
-{% include head.html %}
-<body>
-  {% include navbar.html %}
+---
+layout: default
+---
 
-  {% include jumbotron.html %}
+{% include jumbotron.html %}
 
-  <div class="row">
-    <div class="large-12 columns" role="content">
-      {{ content }}
-    </div>
+<div class="row">
+  <div class="large-12 columns" role="content">
+    {{ content }}
   </div>
+</div>
  
-  {% include footer.html %}
-
-  <script src="{{ site.baseurl }}/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="{{ site.baseurl }}/bower_components/foundation/js/foundation.min.js"></script>
-  <script src="{{ site.baseurl }}/javascripts/app.js"></script>
-</body>
-</html>

@@ -1,26 +1,33 @@
-<!doctype html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
-{% include head.html %}
-<body>
-  {% include navbar.html %}
+---
+layout: default
+---
 
-  {% include jumbo-docs.html %}
-
-  <div class="row" data-equalizer>
-    <div class="large-3 columns" data-equalizer-watch>
-      {% include aside.html %}
-    </div>
-
-    <div class="large-9 columns" role="content" data-equalizer-watch>
-      {{ content }}
+<div class="jumbotron secondary">
+  <div class="row">
+    <div class="large-12 hide-for-small">
+      <div id="featured" style="text-align: center;">
+        {% assign parts = page.url | split: '/' %}
+        {% if parts[1] == 'docs' %}
+        <h1><i class="fa fa-cogs"></i></h1>
+        {% else %}
+        <h1><i class="fa fa-book"></i></h1>
+        {% endif %}
+        <h2>
+          {{ page.title }}
+        </h2>
+      </div>
     </div>
   </div>
- 
-  {% include footer.html %}
+</div>
+<br/><br/>
 
-  <script src="{{ site.baseurl }}/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="{{ site.baseurl }}/bower_components/foundation/js/foundation.min.js"></script>
-  <script src="{{ site.baseurl }}/javascripts/app.js"></script>
-</body>
-</html>
+<div class="row" data-equalizer>
+  <div class="large-3 columns" data-equalizer-watch>
+    {% include aside.html %}
+  </div>
+
+  <div class="large-9 columns" role="content" data-equalizer-watch>
+    {{ content }}
+  </div>
+</div>
+ 

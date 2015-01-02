@@ -40,28 +40,6 @@
 //   "foundation/components/visibility";
 @import "syntax-highlighting";
 
-//.top-bar {
-//   margin-bottom: 10px
-//}
-
-//.top-bar-section li a:not(.button) {
-//	color: $black;
-//  background: $white !important;   
-//}
-
-//.top-bar-section li a:not(.button):hover {
-//	color: $base;
-//  background: #7a687b !important;   
-//}
-
-// .top-bar-section ul li.active > a {
-//     background: gray !important;   
-// }
-
-// .top-bar-section ul li.active > a:hover {
-//     background: yellow !important;   
-// }
-
 .jumbotron {
 	color: $white;
 	background: #5D2788; //url("../images/jumbotron.jpg") no-repeat;
@@ -69,7 +47,6 @@
 	box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6); 
 	z-index: 999;
   background-size: cover;
-  // border-bottom: 2px solid #428bca;
   padding: 80px 0;
 
   h1, h2, h3 {
@@ -90,13 +67,7 @@ h1, h2, h3 {
 	color: #7a687b;
 }
 
-//.navbar {
-//  border-bottom: 1px solid $base;
-//}
-
 aside {
-	// border-right: 1px solid $base;
-  // padding: 10px 10px 0px 0px;
   .side-nav {
     padding: 0px;
   }

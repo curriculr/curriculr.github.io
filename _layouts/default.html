@@ -6,15 +6,7 @@
   {% include navbar.html %}
   <hr style="margin: 0px;"/>
 
-  <div class="row" data-equalizer>
-    <div class="large-3 columns" data-equalizer-watch>
-      {% include aside.html %}
-    </div>
-
-    <div class="large-9 columns" role="content" data-equalizer-watch>
-      {{ content }}
-    </div>
-  </div>
+  {{ content }}
  
   {% include footer.html %}
 
@@ -23,3 +15,5 @@
   <script src="{{ site.baseurl }}/javascripts/app.js"></script>
 </body>
 </html>
+
+  

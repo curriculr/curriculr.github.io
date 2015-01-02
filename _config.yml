@@ -6,3 +6,5 @@ highlighter: pygments
 collections:
   docs:
     output: true
+  tutorials:
+    output: true

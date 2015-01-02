@@ -10,12 +10,14 @@ side_menu_docs:
   - title: Configuration
     url: docs/configuration.html
 side_menu_tutorials:
-  - title: Administrator Guide
-    url: docs/administrator.html
-  - title: Instructor Guide
-    url: docs/instructor.html
-  - title: Student Guide
-    url: docs/student.html
+  - title: Introduction
+    url: tutorials/introduction.html
+  - title: For administrators
+    url: tutorials/administrator.html
+  - title: For instructors
+    url: tutorials/instructor.html
+  - title: For students
+    url: tutorials/student.html
 ---
 
 ## Pre-requisites
@@ -194,3 +196,7 @@ rake curriculr:bootstrap
 {% highlight sh %}
 rails server
 {% endhighlight %}
+
+Now you can visit `http://localhost:3000` which looks like:
+
+![Curriculr front page]({{ site.baseurl }}/images/install-fig01.png)
