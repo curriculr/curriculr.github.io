@@ -12,8 +12,8 @@ side_menu_docs:
 side_menu_tutorials:
   - title: Introduction
     url: tutorials/introduction.html
-  - title: For administrators
-    url: tutorials/administrator.html
+  #- title: For administrators
+  #  url: tutorials/administrator.html
   - title: For instructors
     url: tutorials/instructor.html
   - title: For students
