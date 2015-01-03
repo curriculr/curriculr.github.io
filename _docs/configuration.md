@@ -32,7 +32,7 @@ Managed by the site's super user, these configurations apply across accounts to 
 default_account: main
 {% endhighlight %}
 
-This setting identifies the name/slug of the default account(tenant) of the site. This is the account that is typically associated with the main domain example.com or the www subdomain. The site must have a default account even if multitenancy is not used.
+This setting identifies the name/slug of the default account(tenant) of the site. This is the account that is typically associated with the main domain example.com or the www sub-domain. The site must have a default account even if multitenancy is not used.
 
 ### Supported locales
 {% highlight yaml %}
@@ -159,7 +159,7 @@ allowed_file_types:
 
 This tells Curriculr what file formats are allowed for file upload per kind. Curriculr classifies files into five categories (or kinds): images, videos, audios, documents and others.
 
-### Permitions
+### Permissions
 {% highlight yaml %} 
   allow_file_upload: true
 {% endhighlight %}
@@ -188,10 +188,10 @@ Before a class is made available to students, it has to be approved. It this set
   require_admin_approval_of_blogs: true
 {% endhighlight %}
 
-If this setting is set to `true`, an admin user will have to make the post public before it can be accessible by people other thatn the author user. If set to `false`, the author user can do that herself.
+If this setting is set to `true`, an admin user will have to make the post public before it can be accessible by people other than the author user. If set to `false`, the author user can do that herself.
 
 ## Course settings
-Managed by the course instructor, these configurations apply to the course being configured. These settings are accessible by clicking the `Settings` link in the course side menue and look like :
+Managed by the course instructor, these configurations apply to the course being configured. These settings are accessible by clicking the `Settings` link in the course side menu and look like :
 
 ![Course settings]({{ site.baseurl }}/images/config-fig03.png)
 
@@ -215,7 +215,7 @@ course:
 
 This is where the course's 100 points are divided among three categories: `assessments`, `attendance`, and `participation`. The `assessments` category is further divided into three levels: assessments at the `lecture` level, assessments at the `unit` level (a unit contains many lectures), assessments at the `course` level (a course contains many units). 
 
-The values under each assessment level can be changed to whatever makes sense to the instructor. One instructor might choose only one final exam and no mid-term exam(s) at the `course` level, an invideo quizzes at the lecture level and nothing under the unit level, Another instructor might choose to have a distribution similar to the one above. Regardless of what distribution is adopted, the sum of all points under all categories and levels must be 100.
+The values under each assessment level can be changed to whatever makes sense to the instructor. One instructor might choose only one final exam and no mid-term exam(s) at the `course` level, an in-video quizzes at the lecture level and nothing under the unit level, Another instructor might choose to have a distribution similar to the one above. Regardless of what distribution is adopted, the sum of all points under all categories and levels must be 100.
 
 {% highlight yaml %}
 letters:
@@ -243,7 +243,7 @@ This tells Curriculr how points are mapped to letter grade. Setting `C: 75` mean
       author: false
 {% endhighlight %}
 
-Every class has its own discussion forums. This is where you can specify what forums are created automatically for you when you create a new class. Under these forums, the `post_deletion_by` setting indictes who is able to delete an post (or a reply) if it has not been commented on before. In the above setting, both the admininstrator and instructor(faculty) are able to delete posts; the author isn't.
+Every class has its own discussion forums. This is where you can specify what forums are created automatically for you when you create a new class. Under these forums, the `post_deletion_by` setting indicates who is able to delete an post (or a reply) if it has not been commented on before. In the above setting, both the administrator and instructor(faculty) are able to delete posts; the author isn't.
 
 ### Instructor roles
 {% highlight yaml %}
@@ -287,9 +287,9 @@ allowed_file_types:
     - dat
 {% endhighlight %}
 
-This tells Curriculr what file formats are allowed for file upload per kind for this course. As mentioned begore, Curriculr classifies files into five categories (or kinds): images, videos, audios, documents and others. These settings will override the `allowed_file_types` account settings for this course.
+This tells Curriculr what file formats are allowed for file upload per kind for this course. As mentioned before, Curriculr classifies files into five categories (or kinds): images, videos, audios, documents and others. These settings will override the `allowed_file_types` account settings for this course.
 
-### Permitions
+### Permissions
 {% highlight yaml %} 
 allow_file_upload: true
 {% endhighlight %}
@@ -300,7 +300,7 @@ This indicates whether to allow course instructors to upload files. If it is set
 allow_user_student_dependents: false
 {% endhighlight %}
 
-This setting overrides the identically named `allow_user_student_dependents` account setting for this course and is used to allow (or prevent) a user (a person with a name, an email and a password) to enroll other non-user students in classes of this course. Think of a parent enrolling his underaged children in a klass.
+This setting overrides the identically named `allow_user_student_dependents` account setting for this course and is used to allow (or prevent) a user (a person with a name, an email and a password) to enroll other non-user students in classes of this course. Think of a parent enrolling his under-aged children in a class.
 
 {% highlight yaml %}
 allow_access_to:

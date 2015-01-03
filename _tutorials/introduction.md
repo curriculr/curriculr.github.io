@@ -30,7 +30,7 @@ Curriculr is an open and interactive learning platform that supports both MOOCs 
 ## Administrators, faculty and students
 Curriculr supports three kinds of users: administrators, faculty, and students. Administrators oversee the site and have access to everything in it. Faculty users create and manage courses. Students browse available classes and can enroll in any class they choose. Once enrolled in a class, they'll be able to attend lectures, attempt assessments, take surveys, read documents, watch videos, participate in class discussions, and track their progress.y
 
-An administrator is any user with the role of `admin`. Similarly a faculty user is any user with the role of `faculty`. These two roles are assigned manually to users by an existing adminstrator. A student, on the other hand, is any non-administrator user with at least one enrolled class.
+An administrator is any user with the role of `admin`. Similarly a faculty user is any user with the role of `faculty`. These two roles are assigned manually to users by an existing administrator. A student, on the other hand, is any non-administrator user with at least one enrolled class.
 
 ## Course vs class
 You might have noticed that we use the term `course(s)` when we talk about instructors and the term `class(es)` when we talk about students. This is because in Curriculr courses and classes are different things, and it's imperative to understand

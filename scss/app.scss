@@ -73,8 +73,13 @@ aside {
   }
 }
 
+.strip-gray {
+  background: $silver;
+}
+
 .strip-even {
-  background: $vapor;
+  border-top: solid 1px $vapor;
+  border-bottom: solid 1px $vapor;
 }
 
 .lead {

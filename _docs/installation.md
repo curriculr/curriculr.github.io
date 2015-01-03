@@ -144,7 +144,7 @@ This is required by Rails and typically used to generate a secret for cookie ses
 rake secret
 {% endhighlight %}
 
-These keys differ from one enrnironment to another.
+These keys differ from one environment to another.
 
 ### Mailer settings
 {% highlight yaml %}
