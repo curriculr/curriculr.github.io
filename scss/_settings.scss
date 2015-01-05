@@ -103,7 +103,7 @@ $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 $silver      : #EFEFEF;
 $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
+$gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
@@ -115,6 +115,7 @@ $smoke       : #EEEEEE;
 $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$violet      : #5D2788;
 
 // We use these as default colors throughout
 $primary-color: #5D2788; //#008CBA;
@@ -977,13 +978,13 @@ $flex-video-margin-bottom: rem-calc(0);
 // $include-html-pricing-classes: $include-html-classes;
 
 // We use this to control the border color
-// $price-table-border: solid 1px $gainsboro;
+$price-table-border: solid 1px $violet;
 
 // We use this to control the bottom margin of the pricing table
 // $price-table-margin-bottom: rem-calc(20);
 
 // We use these to control the title styles
-// $price-title-bg: $oil;
+$price-title-bg: $violet;
 // $price-title-padding: rem-calc(15 20);
 // $price-title-align: center;
 // $price-title-color: $smoke;
@@ -1414,8 +1415,8 @@ $topbar-link-bg-active: $vapor;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
+$topbar-menu-link-color: $oil;
+$topbar-menu-icon-color: $oil;
 // $topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 

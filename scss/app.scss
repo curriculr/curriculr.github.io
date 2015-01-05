@@ -42,15 +42,15 @@
 
 .jumbotron {
 	color: $white;
-	background: #5D2788; //url("../images/jumbotron.jpg") no-repeat;
+	background: $violet;
 	padding: 15px 0 0; 
 	box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6); 
 	z-index: 999;
   background-size: cover;
-  padding: 80px 0;
+  padding: 60px 0;
 
   h1, h2, h3 {
-  	color: #dadada;
+  	color: $smoke;
   }
 
   &.secondary{
@@ -74,24 +74,30 @@ aside {
 }
 
 .strip-gray {
+  border-top: solid 1px $gainsboro;
   background: $silver;
+  padding: 40px 0px;
+
+  h1 {
+    padding-bottom: 40px;
+  }
 }
 
 .strip-even {
-  border-top: solid 1px $vapor;
-  border-bottom: solid 1px $vapor;
+  border-top: solid 1px $smoke;
+  border-bottom: solid 1px $smoke;
 }
 
 .lead {
   font-size: 21px;
-  padding-top: 20px;
+  padding: 20px 0px;
 }
 
 .strip-even img, .strip-odd img {
   margin: 20px 0px;
   background: $white;
   padding: 10px;
-  border: 1px solid $silver;
+  border: 1px solid $smoke;
   border-radius: 5px;
 }
 
